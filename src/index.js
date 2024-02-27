@@ -2,8 +2,11 @@
 import express from 'express'; //this is module type u can see packag.json
 import AppRoutes from "./routes/index.js"
 
+import dotenv from 'dotenv'
+dotenv.config()
+
 const app = express();
-const PORT = process.env.PORT || 8000; // process.env.Port is useing for deployment
+const PORT = process.env.PORT
 
 app.use(express.json())
 app.use('/', AppRoutes )
